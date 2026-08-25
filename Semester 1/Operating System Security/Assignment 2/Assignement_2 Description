@@ -1,0 +1,44 @@
+# Assignment 2: SELinux Policy Development
+
+## Overview
+
+This individual security assignment involved developing and applying a custom SELinux policy module for a target application in a Fedora Security Lab virtual machine. The goal was to confine the application within a dedicated SELinux domain while maintaining functionality and applying the principle of least privilege.
+
+## Objectives
+
+- Compile and run a target application in a Fedora Security Lab VM.
+- Create a custom SELinux policy module.
+- Confine the application in a dedicated SELinux domain.
+- Apply appropriate SELinux file labels to the application and required data files.
+- Use audit logs and `audit2allow` to identify required policy rules.
+- Verify that the application runs correctly with only the minimum required permissions.
+
+## Tools and Technologies
+
+- Fedora Security Lab
+- SELinux
+- Linux command line
+- `audit2allow`
+- SELinux policy modules
+- VirtualBox or VMware
+
+## Skills Demonstrated
+
+- Mandatory Access Control (MAC)
+- SELinux policy development
+- Least-privilege access design
+- Linux file contexts and labeling
+- Linux troubleshooting and audit-log analysis
+- Virtual-machine administration
+- Security testing and verification
+
+## Repository Contents
+
+- `policy/` contains the custom SELinux policy source file, where permitted.
+- `source/` contains only safe or permitted application source material.
+- `screenshots/` contains sanitized evidence of configuration and verification.
+- `report.pdf` contains the submitted report or a portfolio-safe version.
+
+## Academic Integrity and Privacy
+
+This repository contains only material that I am permitted to share. Personally identifying information, course-restricted instructions, credentials, and sensitive system details have been removed or anonymized.
