@@ -1,0 +1,21 @@
+# Assignment 1: Secure Design, Threat Modeling, and Buffer-Overflow Analysis
+
+## Overview
+
+In this assignment, I applied secure software engineering principles to analyze development approaches, access-control logic, threat models, and common implementation vulnerabilities. I compared security considerations in Waterfall and Scrum, evaluated testing approaches, and corrected an insecure authorization decision to follow the fail-safe default principle.
+
+I also developed a threat model for an IoT blood-pressure monitoring system and focused on availability risks across sensors, RPC communication, web services, and database components. I proposed practical mitigations including input validation, TLS, monitoring, retry mechanisms, rate limiting, caching, and resource controls.
+
+To complete the assignment, I created an attack-defense tree for unauthorized email access and evaluated attack paths such as phishing, credential reuse, social engineering, session compromise, and brute-force attempts. I then mapped these threats to controls including MFA, phishing awareness, DMARC, conditional access, endpoint detection, session timeouts, and TLS enforcement.
+
+Finally, I identified and demonstrated a stack-based buffer-overflow vulnerability in a C Rock-Paper-Scissors program. I showed how overlong input could corrupt adjacent stack variables and affect program behavior, then corrected the vulnerable input handling with a safe single-character input approach.
+
+## Skills Demonstrated
+
+- Secure software development lifecycle analysis
+- Threat modeling and attack-defense trees
+- Security architecture and availability planning
+- Fail-safe defaults and secure access-control design
+- Buffer-overflow analysis and remediation
+- C programming and secure input validation
+- Security-control selection and risk mitigation
