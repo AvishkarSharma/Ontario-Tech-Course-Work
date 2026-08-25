@@ -1,22 +1,22 @@
-# Assignment 2: Web Application Security and Session Protection
+# Assignment 3: Access Control, Password Security, and SSH Log Analysis
 
 ## Overview
 
-In this assignment, I analyzed web application vulnerabilities related to browser security controls, session management, SQL injection, cross-site scripting, and broken access control. I designed a Content Security Policy (CSP) using `default-src`, `script-src`, and `connect-src` directives to reduce the risk of malicious scripts and prevent data exfiltration to attacker-controlled domains.
+In this assignment, I examined access-control models, password security, attribute-based authorization, and authentication-log analysis. I compared Discretionary Access Control (DAC), Role-Based Access Control (RBAC), and Mandatory Access Control (MAC), with a focus on how RBAC reduces the complexity of managing permissions by assigning permissions to roles rather than directly to every individual user.
 
-I examined session hijacking and session puzzling attacks, explaining how insecure cookies, unencrypted HTTP traffic, weak session logic, and inconsistent reuse of session variables can lead to account compromise or authentication bypass.
+I analyzed password salting and legacy LM hashing. I explained how unique salts reduce the effectiveness of rainbow tables and large-scale password cracking, and I evaluated weaknesses in the LM hash design, including case insensitivity, password splitting, lack of salting, use of DES, null padding, and the absence of a configurable work factor.
 
-I tested and remediated vulnerabilities in a message-board application. I identified SQL injection caused by string-formatted queries and replaced it with parameterized queries. I also found insecure session handling where sensitive credentials were stored in a cookie and where access checks validated only the cookie’s presence. I improved the design by using random session tokens, server-side session validation, and hardened cookie settings such as `HttpOnly` and `Secure`.
+I designed an access-control model using age, membership type, movie rating, and release date. I translated the attribute-based requirements into roles, permissions, and an access matrix while accounting for real-world changes such as user registration, birthdays, subscription updates, new content, and account deletion.
 
-I also demonstrated the impact of XSS against insecure session handling and verified that stronger cookie protections prevented JavaScript from reading the protected session value.
+To complete the assignment, I used Python, Pandas, regular expressions, and Matplotlib to analyze OpenSSH authentication logs. I identified source IP addresses associated with repeated invalid-user login attempts, filtered events to reduce duplicate counting, and examined the timing of failed authentication activity. My analysis identified a morning concentration of suspicious login attempts, with the highest observed activity at 9:00 AM.
 
 ## Skills Demonstrated
 
-- Content Security Policy design
-- SQL injection identification and prevention
-- Parameterized SQL queries
-- Session hijacking and session puzzling analysis
-- Secure cookie configuration
-- XSS risk analysis and mitigation
-- Authentication and authorization hardening
-- Defense-in-depth web application security
+- DAC, RBAC, MAC, and ABAC analysis
+- Access matrices and role-permission design
+- Password hashing and salting concepts
+- Legacy authentication-risk analysis
+- Python security automation
+- Pandas, regular expressions, and Matplotlib
+- SSH log analysis and brute-force detection
+- Security-event filtering and time-based threat analysis
