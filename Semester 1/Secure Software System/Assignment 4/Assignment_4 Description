@@ -1,0 +1,23 @@
+# Assignment 4: Security Testing, Fuzzing, and Static Analysis
+
+## Overview
+
+In this assignment, I applied software-security testing techniques to identify reliability and security issues. I created a unit test for a function containing a stochastic division-by-zero defect and executed it repeatedly to capture the nondeterministic `ZeroDivisionError`. This demonstrated why randomized behavior and edge cases need repeated testing.
+
+I evaluated code coverage as a guide for fuzzing, explaining how coverage-guided fuzzing helps prioritize mutated inputs that reach previously unexplored execution paths. I also compared static code analysis and fuzzing, showing how static analysis identifies structural weaknesses without executing code, while fuzzing dynamically tests applications with unexpected or malformed input to expose runtime failures.
+
+I assessed the security impact of false positives and false negatives in automated analysis tools and recommended combining multiple security-testing methods with manual review to reduce missed vulnerabilities and alert fatigue.
+
+I also implemented and tested a self-mutating Python proof-of-concept that used AES encryption to protect an embedded payload. On each execution, the program decrypted and executed the payload, generated a new AES key and IV, re-encrypted the payload, and updated its own source with the new encrypted values. This exercise demonstrated polymorphic behavior, encryption workflows, and the importance of behavioral detection rather than depending only on fixed signatures.
+
+## Skills Demonstrated
+
+- Unit testing with Python `unittest`
+- Stochastic and edge-case testing
+- Fuzzing and coverage-guided testing concepts
+- Static versus dynamic security testing
+- False-positive and false-negative analysis
+- Python exception handling
+- AES encryption concepts
+- Polymorphic and self-modifying code analysis
+- Security-testing documentation
