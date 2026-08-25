@@ -1,0 +1,33 @@
+policy_module(AvishkarSharma_myFirstPolicy, 1.0)
+
+#1.Declaration and Requirements
+#Requirement Block: It will tell the kernel where the existing base types are required to interact with other system
+gen_require(`
+    type unconfined_t;
+    role unconfined_r;
+    attribute file_type;
+')
+# Define the domain for the application process
+type AvishkarSharma_t;
+# Define the label for executable binary
+type AvishkarSharma_exec_t, file_type;
+# Define the label for the 'priv' directory and its logs
+type AvishkarSharma_data_t, file_type;
+
+#2.Domain Transition Logic
+# When a process is unconfined_t executes a file labeled as 'AvishkarSharma_exec_t', new process will automatically transition to 'AvishkarSharma_t' domain
+type_transition unconfined_t AvishkarSharma_exec_t:process AvishkarSharma_t;
+
+#3.Execution & Process Permissions
+# Allowing the domain 'AvishkarSharma_t' to use the binary as an entrypoint to start the process
+allow AvishkarSharma_t AvishkarSharma_exec_t:file { entrypoint read map execute open getattr };
+# Allowing the user's unconfined_t to execute the labeled binary
+allow unconfined_t AvishkarSharma_exec_t:file { read execute open getattr map };
+#Allowing the user's shell to perform the transition to the new domain and receive signals when the application completes its execution
+allow unconfined_t AvishkarSharma_t:process { transition sigchld };
+
+#4.Data Storage and File Access
+# This allows the app process to enter, search and list the directory, allow 'add_name' and 'write' will allow the process to create new files in the directory
+allow AvishkarSharma_t AvishkarSharma_data_t:dir { read search open add_name write };
+# Allow the app to read and write the params.txt and records.txt
+allow AvishkarSharma_t AvishkarSharma_data_t:file { read write open getattr append create };
