@@ -1,0 +1,22 @@
+# Assignment 2: Web Application Security and Session Protection
+
+## Overview
+
+In this assignment, I analyzed web application vulnerabilities related to browser security controls, session management, SQL injection, cross-site scripting, and broken access control. I designed a Content Security Policy (CSP) using `default-src`, `script-src`, and `connect-src` directives to reduce the risk of malicious scripts and prevent data exfiltration to attacker-controlled domains.
+
+I examined session hijacking and session puzzling attacks, explaining how insecure cookies, unencrypted HTTP traffic, weak session logic, and inconsistent reuse of session variables can lead to account compromise or authentication bypass.
+
+I tested and remediated vulnerabilities in a message-board application. I identified SQL injection caused by string-formatted queries and replaced it with parameterized queries. I also found insecure session handling where sensitive credentials were stored in a cookie and where access checks validated only the cookie’s presence. I improved the design by using random session tokens, server-side session validation, and hardened cookie settings such as `HttpOnly` and `Secure`.
+
+I also demonstrated the impact of XSS against insecure session handling and verified that stronger cookie protections prevented JavaScript from reading the protected session value.
+
+## Skills Demonstrated
+
+- Content Security Policy design
+- SQL injection identification and prevention
+- Parameterized SQL queries
+- Session hijacking and session puzzling analysis
+- Secure cookie configuration
+- XSS risk analysis and mitigation
+- Authentication and authorization hardening
+- Defense-in-depth web application security
